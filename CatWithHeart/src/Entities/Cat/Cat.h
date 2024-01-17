@@ -2,6 +2,7 @@
 
 
 #include "../Entity/Entity.h"
+#include "../../Utilities/Context/Context.h"
 
 #include <memory>
 #include <vector>
@@ -17,7 +18,7 @@ class Cat : public Entity
 {
 private:
 	uint32_t currentAnim; // Store curent state of the animation.
-	std::vector<std::unique_ptr<sf::Texture>> animationTextures; // Store all textures for animation.
+	std::vector<std::unique_ptr<sf::Texture>>& animationTextures; // Store all textures for animation.
 
 	const sf::Time ANIM_TIME = sf::seconds(0.15f);
 
@@ -64,13 +65,5 @@ private:
 	// 
 	/////////////////////////////////////////////
 	void Animate();
-
-	/////////////////////////////////////////////
-	// \brief
-	//		This method fill our array of
-	//		animations.
-	// 
-	/////////////////////////////////////////////
-	void LoadTextures();
 };
 

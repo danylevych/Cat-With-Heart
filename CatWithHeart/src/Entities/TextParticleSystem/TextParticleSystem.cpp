@@ -32,9 +32,9 @@ void TextParticleSystem::GenerateUnit(const std::string& text)
 
 void TextParticleSystem::Update(sf::Time deltaTime)
 {
-	RemoveOldUnit();
-	AnimateUnit();
-	UpdateUnitTime(deltaTime);
+	//RemoveOldUnit();
+	//AnimateUnit();
+	//UpdateUnitTime(deltaTime);
 }
 
 void TextParticleSystem::AnimateUnit()

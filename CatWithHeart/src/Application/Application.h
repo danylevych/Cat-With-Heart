@@ -2,6 +2,7 @@
 
 #include "../Entities/Cat/Cat.h"
 #include "../Entities/Heart/Heart.h"
+#include "States/StateStack/StateStack.h"
 #include "../Tools/FileReader/FileReader.h"
 #include "../Tools/EventManager/EventManager.h"
 #include "../Entities/TextParticleSystem/TextParticleSystem.h"
@@ -24,23 +25,12 @@
 class Application
 {
 private:
-	//==========   Window  ============
-	sf::Image icon;
-	sf::RenderWindow window;
+	sf::RenderWindow* window;
 	sf::Music backgroundMusic;
-	EventManager* eventManager;
+	EventManager eventManager;
 
-	//==========    Text   ============
-	TextParticleSystem textParticleSystem;
-	FileReader reader;
-	sf::Font font;
+	StateStack stateStack;
 
-	//==========  Objects  ============
-	sf::CircleShape heartTraectory;
-	Cat cat;
-	Heart heart;
-
-	//========== Constantes ===========
 	const sf::Time FRAME_PER_SECOND = sf::seconds(1.f / 60.f);
 
 public:
@@ -85,13 +75,6 @@ private:
 private: // Init section.
 	/////////////////////////////////////////////////////
 	// \brief
-	//		Sets the position of each object.
-	// 
-	/////////////////////////////////////////////////////
-	void InitSpawnPos();
-
-	/////////////////////////////////////////////////////
-	// \brief
 	//		Load the resources for the appliction.
 	// 
 	/////////////////////////////////////////////////////
@@ -106,8 +89,8 @@ private: // Init section.
 
 	/////////////////////////////////////////////////////
 	// \brief
-	//		Init text generetor for the app.
+	//	 Init stack of the states for the appliction.
 	// 
 	/////////////////////////////////////////////////////
-	void InitTextGenerator();
+	void InitStateStack();
 };

@@ -43,6 +43,27 @@
     <ClCompile Include="src\Tools\FileReader\FileReader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Utilities\ResourceHolder\ResourceHolder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utilities\Context\Context.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Application\States\State\State.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Application\States\StateStack\StateStack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Application\States\GameState\GameState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Application\States\LoadState\LoadState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entities\ProgressBar\ProgressBar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="data\textures\cat\1.png">
@@ -67,6 +88,36 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="data\icon\heart.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="data\textures\progressBar\1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="data\textures\progressBar\10.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="data\textures\progressBar\2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="data\textures\progressBar\3.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="data\textures\progressBar\4.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="data\textures\progressBar\5.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="data\textures\progressBar\6.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="data\textures\progressBar\7.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="data\textures\progressBar\8.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="data\textures\progressBar\9.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
@@ -99,6 +150,39 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Tools\FileReader\FileReader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utilities\ResourceHolder\ResourceHolder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Enums\TextureID.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utilities\Holders.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Enums\FontID.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utilities\Context\Context.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Application\States\State\State.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Enums\StateID.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Application\States\StateStack\StateStack.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Application\States\GameState\GameState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Application\States\LoadState\LoadState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entities\ProgressBar\ProgressBar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -35,7 +35,7 @@ private:
 	std::map<std::string, Command> staticActions;
 	std::map<std::string, Command> realTimeActions;
 
-private:
+public:
 	EventManager() = default;
 
 public:
@@ -44,7 +44,7 @@ public:
 	//		Returns an instance of the manager.
 	// 
 	////////////////////////////////////////////////////////
-	static EventManager& GetInstance();
+	//static EventManager& GetInstance();
 
 	////////////////////////////////////////////////////////
 	// \brief

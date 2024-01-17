@@ -131,6 +131,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Entities\ProgressBar\ProgressBar.cpp" />
+    <ClCompile Include="src\Application\States\GameState\GameState.cpp" />
+    <ClCompile Include="src\Application\States\LoadState\LoadState.cpp" />
+    <ClCompile Include="src\Utilities\Context\Context.cpp" />
+    <ClCompile Include="src\Utilities\ResourceHolder\ResourceHolder.cpp" />
     <ClCompile Include="src\Tools\FileReader\FileReader.cpp" />
     <ClCompile Include="src\Tools\EventManager\EventManager.cpp" />
     <ClCompile Include="src\Application\Application.cpp" />
@@ -139,6 +144,8 @@
     <ClCompile Include="src\Entities\Entity\Entity.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src\Entities\TextParticleSystem\TextParticleSystem.cpp" />
+    <ClCompile Include="src\Application\States\State\State.cpp" />
+    <ClCompile Include="src\Application\States\StateStack\StateStack.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="data\icon\heart.png" />
@@ -149,8 +156,27 @@
     <Image Include="data\textures\cat\5.png" />
     <Image Include="data\textures\cat\6.png" />
     <Image Include="data\textures\heart\heart.png" />
+    <Image Include="data\textures\progressBar\1.png" />
+    <Image Include="data\textures\progressBar\10.png" />
+    <Image Include="data\textures\progressBar\2.png" />
+    <Image Include="data\textures\progressBar\3.png" />
+    <Image Include="data\textures\progressBar\4.png" />
+    <Image Include="data\textures\progressBar\5.png" />
+    <Image Include="data\textures\progressBar\6.png" />
+    <Image Include="data\textures\progressBar\7.png" />
+    <Image Include="data\textures\progressBar\8.png" />
+    <Image Include="data\textures\progressBar\9.png" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Entities\ProgressBar\ProgressBar.h" />
+    <ClInclude Include="src\Application\States\GameState\GameState.h" />
+    <ClInclude Include="src\Application\States\LoadState\LoadState.h" />
+    <ClInclude Include="src\Enums\StateID.h" />
+    <ClInclude Include="src\Utilities\Context\Context.h" />
+    <ClInclude Include="src\Enums\FontID.h" />
+    <ClInclude Include="src\Enums\TextureID.h" />
+    <ClInclude Include="src\Utilities\Holders.h" />
+    <ClInclude Include="src\Utilities\ResourceHolder\ResourceHolder.h" />
     <ClInclude Include="src\Tools\FileReader\FileReader.h" />
     <ClInclude Include="src\Enums\KeyActions.h" />
     <ClInclude Include="src\Tools\EventManager\EventManager.h" />
@@ -161,6 +187,8 @@
     <ClInclude Include="src\Entities\TextParticleSystem\TextParticleSystem.h" />
     <ClInclude Include="src\Tools\Random.h" />
     <ClInclude Include="src\Tools\Range.h" />
+    <ClInclude Include="src\Application\States\State\State.h" />
+    <ClInclude Include="src\Application\States\StateStack\StateStack.h" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="data\fonts\Lemon-Regular.ttf" />

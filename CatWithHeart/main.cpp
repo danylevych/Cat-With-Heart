@@ -6,6 +6,7 @@ int main()
 {
 	try
 	{
+		
 		Application().Run();
 	}
 	catch (const std::exception& e)

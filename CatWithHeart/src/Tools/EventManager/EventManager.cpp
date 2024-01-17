@@ -1,10 +1,10 @@
 #include "EventManager.h"
 
-EventManager& EventManager::GetInstance()
-{
-	static EventManager instance;
-	return instance;
-}
+//EventManager& EventManager::GetInstance()
+//{
+//	static EventManager instance;
+//	return instance;
+//}
 
 sf::Vector2i EventManager::GetMousePos(const sf::WindowBase& window)
 {
