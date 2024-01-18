@@ -1,42 +1,22 @@
 #include "Cat.h"
 
-#include <fstream>
-#include <string>
-#include <exception>
-
+#include "../../Utilities/Context/Context.h"
 
 Cat::Cat(const sf::Vector2f& spawnPos)
-	: Entity(spawnPos)
-	, currentAnim(-1)
-	, animationTextures(Context::GetInstance().textures.Get(TextureID::Cat))
-{
-	Animate();
-}
+	: AnimatedEntity(spawnPos, 
+					 Context::GetInstance().textures.Get(TextureID::Cat), 
+					 sf::seconds(0.15f))
+{	}
 
-void Cat::Animate()
-{
-	++currentAnim;
-	if (currentAnim == animationTextures.size())
-	{
-		currentAnim = 0;
-	}
-
-	sprite.setTexture(*animationTextures[currentAnim].get());
-}
 
 sf::Vector2u Cat::GetOriginSize() const
 {
 	return animationTextures[0]->getSize();
 }
 
+// We bring the update method to public section
+// so we need to redefine its behavior.
 void Cat::Update(sf::Time deltaTime)
 {
-	static sf::Time animTime = sf::Time::Zero;
-
-	animTime += deltaTime;
-	if (animTime >= ANIM_TIME)
-	{
-		Animate();
-		animTime = sf::Time::Zero;
-	}
+	AnimatedEntity::Update(deltaTime);
 }

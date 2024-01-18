@@ -4,9 +4,8 @@
 
 #include "../../../Entities/Cat/Cat.h"
 #include "../../../Entities/Heart/Heart.h"
-#include "../../../Tools/FileReader/FileReader.h"
 #include "../../../Tools/EventManager/EventManager.h"
-#include "../../../Entities/TextParticleSystem/TextParticleSystem.h"
+#include "../../../Entities/ParticleSystem/ParticleSystem.h"
 
 #include <SFML/Graphics/CircleShape.hpp>
 
@@ -15,8 +14,7 @@ class GameState : public State
 {
 private:
 	//==========    Text   ============
-	TextParticleSystem textParticleSystem;
-	FileReader reader;
+	ParticleSystem particleSystem;
 
 	//==========  Objects  ============
 	sf::CircleShape heartTraectory;

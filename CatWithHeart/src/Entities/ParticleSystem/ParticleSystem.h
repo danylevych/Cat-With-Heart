@@ -14,6 +14,7 @@
 
 #include "../../Tools/Range.h"
 #include "../../Tools/Random.h"
+#include "../AnimatedEntity/AnimatedEntity.h"
 #include <SFML/Graphics/RenderWindow.hpp>
 
 
@@ -23,32 +24,42 @@
 //		this app.
 // 
 ///////////////////////////////////////////////////////
-class TextParticleSystem : public sf::Drawable
+class ParticleSystem : public sf::Drawable
 						 , sf::NonCopyable
 {
 public:
-	using Ptr = std::unique_ptr<TextParticleSystem>;
-	using Unit = std::pair<std::unique_ptr<sf::Text>, sf::Time>;
+	using Ptr = std::unique_ptr<ParticleSystem>;
+
+	// First parameter of the Properties is life time,
+	// second defines if the unit still alive.
+	using Properties = std::pair<sf::Time, bool>;
+
+	using Unit = std::pair<AnimatedEntity::Ptr, Properties>;
+
+public:
+	enum class GenerationPosition
+	{
+		InBorders,
+		UnderCursor
+	};
 
 private:
-	std::vector<Unit> texts;
+	std::vector<Unit> units;
+	GenerationPosition generationPosition;
 
 	//========= Settings ==========
 	uint32_t			maxCountOfElements;
 	sf::Time			lifeTime;
-	sf::Time			animTime;
 	sf::Time			timeBetween;
-	sf::Font			font;
-	RangeI				fontSizes;
+
 	RangeF				rotationAngles;
 	sf::FloatRect       borders;
 	float_t				startScale = 0.01f;
-	sf::Color			color;
-	RangeI				opasities;
+
 	Random<>			random;
 
 public:
-	TextParticleSystem() = default;
+	ParticleSystem(GenerationPosition generationPosition = GenerationPosition::InBorders);
 
 public:
 	/////////////////////////////////////////////////////
@@ -56,7 +67,7 @@ public:
 	//		Generate an instance of the unit.
 	// 
 	/////////////////////////////////////////////////////
-	void GenerateUnit(const std::string& text = "NONE");
+	void GenerateUnit();
 
 	/////////////////////////////////////////////////////
 	// \brief
@@ -75,36 +86,37 @@ public:
 private:
 	/////////////////////////////////////////////////////
 	// \brief
-	//	   Animate the unit, simply it cahnges the
-	//	   scale property for the unit.
-	// 
-	/////////////////////////////////////////////////////
-	void AnimateUnit();
-
-	/////////////////////////////////////////////////////
-	// \brief
 	//     Remove the units, life of which is ended.
 	// 
 	/////////////////////////////////////////////////////
-	void RemoveOldUnit();
+	void RemoveDeadUnit(Unit& unit);
 
 	/////////////////////////////////////////////////////
 	// \brief
-	//	 Updete time property for each existing unit.
+	//	  Create a new unit and add it to container.
 	// 
 	/////////////////////////////////////////////////////
-	void UpdateUnitTime(sf::Time deltaTime);
+	void CreateNewUnit();
+
+	/////////////////////////////////////////////////////
+	// \brief
+	//		Find dead unit and resurrect them.
+	// 
+	/////////////////////////////////////////////////////
+	void ResurrectUnit();
+
+	/////////////////////////////////////////////////////
+	// \brief
+	//		 Set the position of the unit.
+	// 
+	/////////////////////////////////////////////////////
+	void SetUnitPosition(Unit& unit);
 
 public: // Setters
 	void SetMaxCountOfElemnt(uint32_t  maxCountOfElements);
 	void SetLifeTime(sf::Time lifeTime);
-	void SetAnimTime(sf::Time animTime);
 	void SetBetweenTime(sf::Time betweenTime);
-	void SetFontSizeRange(RangeI fontSizes);
 	void SetRotationAngles(RangeF rotationAngles);
 	void SetGeneretionBorders(const sf::FloatRect& borders);
-	void SetFont(const sf::Font& font);
-	void SetColor(sf::Color color);
-	void SetColorsOpasities(RangeI opasities);
 };
 

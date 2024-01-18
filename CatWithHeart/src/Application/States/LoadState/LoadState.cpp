@@ -80,8 +80,8 @@ void LoadState::Update(sf::Time deltaTime)
 {
 	if (progressBar.IsComplete()) // The loading just ends.
 	{
-		RequestStackPop();
 		RequestStackPush(StateID::Game);
+		RequestStackPop();
 		return;
 	}
 

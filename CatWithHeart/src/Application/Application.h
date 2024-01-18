@@ -3,9 +3,8 @@
 #include "../Entities/Cat/Cat.h"
 #include "../Entities/Heart/Heart.h"
 #include "States/StateStack/StateStack.h"
-#include "../Tools/FileReader/FileReader.h"
 #include "../Tools/EventManager/EventManager.h"
-#include "../Entities/TextParticleSystem/TextParticleSystem.h"
+#include "../Entities/ParticleSystem/ParticleSystem.h"
 
 #include <SFML/Graphics/Font.hpp>
 #include <SFML/Graphics/Text.hpp>

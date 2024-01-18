@@ -1,17 +1,9 @@
 #pragma once
-
-
 #include "../AnimatedEntity/AnimatedEntity.h"
 
 #include <SFML/Graphics/Texture.hpp>
 
-///////////////////////////////////////////
-// \brief
-//		Class represent the cat object
-//		in our project.
-// 
-///////////////////////////////////////////
-class Cat : public AnimatedEntity
+class Click : public AnimatedEntity
 {
 public:
 	/////////////////////////////////////////////
@@ -20,7 +12,7 @@ public:
 	//		position for our entity.
 	//  
 	/////////////////////////////////////////////
-	Cat(const sf::Vector2f& spawnPos);
+	Click(const sf::Vector2f& spawnPos);
 
 	/////////////////////////////////////////////
 	// \brief
@@ -29,7 +21,7 @@ public:
 	//		inherit from this class.
 	// 
 	/////////////////////////////////////////////
-	virtual ~Cat() = default;
+	virtual ~Click() = default;
 
 public:
 	//////////////////////////////////////////////////
@@ -39,7 +31,7 @@ public:
 	// 
 	//////////////////////////////////////////////////
 	virtual sf::Vector2u GetOriginSize() const override;
-	
+
 	//////////////////////////////////////////////////
 	// \brief
 	//		Overloaded Update method, that change

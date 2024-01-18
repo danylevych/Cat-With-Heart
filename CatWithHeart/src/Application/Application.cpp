@@ -31,7 +31,8 @@ void Application::InitBindedKeys()
 {
 	// Bind the static events.
 	eventManager.BindKey(sf::Event::EventType::Closed, [this]() { 
-		window->close(); });
+		window->close(); 
+	});
 }
 
 void Application::InitStateStack()

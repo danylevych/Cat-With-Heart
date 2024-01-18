@@ -34,13 +34,10 @@
     <ClCompile Include="src\Application\Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Entities\TextParticleSystem\TextParticleSystem.cpp">
+    <ClCompile Include="src\Entities\ParticleSystem\ParticleSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Tools\EventManager\EventManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Tools\FileReader\FileReader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Utilities\ResourceHolder\ResourceHolder.cpp">
@@ -62,6 +59,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Entities\ProgressBar\ProgressBar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entities\AnimatedEntity\AnimatedEntity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entities\Click\Click.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -134,7 +137,7 @@
     <ClInclude Include="src\Application\Application.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Entities\TextParticleSystem\TextParticleSystem.h">
+    <ClInclude Include="src\Entities\ParticleSystem\ParticleSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Tools\Range.h">
@@ -147,9 +150,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Tools\EventManager\EventManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Tools\FileReader\FileReader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Utilities\ResourceHolder\ResourceHolder.h">
@@ -183,6 +183,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Entities\ProgressBar\ProgressBar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entities\AnimatedEntity\AnimatedEntity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entities\Click\Click.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -18,6 +18,8 @@ void StateStack::Update(sf::Time deltaTime)
 	{
 		stack.top()->Update(deltaTime);
 	}
+
+	ApplyChanges();
 }
 
 void StateStack::HandleEvent(const sf::Event& event)
@@ -35,20 +37,41 @@ bool StateStack::IsEmpty() const
 
 void StateStack::Push(StateID stateId)
 {
-	auto result = factories[stateId]();
-	stack.push(std::move(result));
+	pendingChanges.push(PendingChanges(Action::Push, stateId));
 }
 
 void StateStack::Pop()
 {
-	stack.pop();
+	pendingChanges.push(Action::Pop);
 }
 
 void StateStack::Clear()
 {
-	while (!stack.empty())
+	pendingChanges.push(Action::Clear);
+}
+
+void StateStack::ApplyChanges()
+{
+	while (!pendingChanges.empty())
 	{
-		stack.pop();
+		switch (pendingChanges.top().action)
+		{
+		case Action::Push:
+			stack.push(std::move(factories[pendingChanges.top().stateId]()));
+			break;
+
+		case Action::Pop:
+			stack.pop();
+			break;
+
+		case Action::Clear:
+			while (!stack.empty())
+			{
+				stack.pop();
+			}
+			break;
+		}
+		pendingChanges.pop();
 	}
 }
 

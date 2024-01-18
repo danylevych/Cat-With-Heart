@@ -2,6 +2,7 @@
 
 enum class StateID
 {
+	None,
 	Loading,
 	Game
 };
